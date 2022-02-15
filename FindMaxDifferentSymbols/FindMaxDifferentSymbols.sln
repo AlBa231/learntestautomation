@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMaxDifferentSymbols", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMaxDifferentSymbols.Test", "FindMaxDifferentSymbols.Test\FindMaxDifferentSymbols.Test.csproj", "{8ABE6D5F-0B1C-4A47-8B1B-C3C7B4CA891D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertNumberToXNotation", "..\ConvertNumberToXNotation\ConvertNumberToXNotation.csproj", "{8E7A07C1-706E-4F67-8479-E23ACA09780C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertNumberToXNotation.Test", "..\ConvertNumberToXNotation.Test\ConvertNumberToXNotation.Test.csproj", "{D441D921-1961-4147-A148-3B91D924C8F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{8ABE6D5F-0B1C-4A47-8B1B-C3C7B4CA891D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8ABE6D5F-0B1C-4A47-8B1B-C3C7B4CA891D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8ABE6D5F-0B1C-4A47-8B1B-C3C7B4CA891D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E7A07C1-706E-4F67-8479-E23ACA09780C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E7A07C1-706E-4F67-8479-E23ACA09780C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E7A07C1-706E-4F67-8479-E23ACA09780C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E7A07C1-706E-4F67-8479-E23ACA09780C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D441D921-1961-4147-A148-3B91D924C8F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D441D921-1961-4147-A148-3B91D924C8F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D441D921-1961-4147-A148-3B91D924C8F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D441D921-1961-4147-A148-3B91D924C8F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
