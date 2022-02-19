@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindMaxDifferentSymbols", "FindMaxDifferentSymbols\FindMaxDifferentSymbols.csproj", "{A2D78012-58AC-4673-9F79-4A3822F8F188}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindMaxDifferentSymbols.Test", "FindMaxDifferentSymbols.Test\FindMaxDifferentSymbols.Test.csproj", "{8F207625-43A1-44E9-9CBA-3DCBD9133D95}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2D78012-58AC-4673-9F79-4A3822F8F188}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2D78012-58AC-4673-9F79-4A3822F8F188}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2D78012-58AC-4673-9F79-4A3822F8F188}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2D78012-58AC-4673-9F79-4A3822F8F188}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F207625-43A1-44E9-9CBA-3DCBD9133D95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F207625-43A1-44E9-9CBA-3DCBD9133D95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F207625-43A1-44E9-9CBA-3DCBD9133D95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F207625-43A1-44E9-9CBA-3DCBD9133D95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
