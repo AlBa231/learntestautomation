@@ -3,13 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMaxDifferentSymbols", "FindMaxDifferentSymbols\FindMaxDifferentSymbols.csproj", "{EA316BC8-D39B-49F6-84AE-8AABB33A3224}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConvertNumberToXNotation", "ConvertNumberToXNotation\ConvertNumberToXNotation.csproj", "{8E7A07C1-706E-4F67-8479-E23ACA09780C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMaxDifferentSymbols.Test", "FindMaxDifferentSymbols.Test\FindMaxDifferentSymbols.Test.csproj", "{8ABE6D5F-0B1C-4A47-8B1B-C3C7B4CA891D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConvertNumberToXNotation.Test", "ConvertNumberToXNotation.Test\ConvertNumberToXNotation.Test.csproj", "{D441D921-1961-4147-A148-3B91D924C8F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertNumberToXNotation", "ConvertNumberToXNotation\ConvertNumberToXNotation.csproj", "{8E7A07C1-706E-4F67-8479-E23ACA09780C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertNumberToXNotation.Test", "ConvertNumberToXNotation.Test\ConvertNumberToXNotation.Test.csproj", "{D441D921-1961-4147-A148-3B91D924C8F4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson1", "Lesson1", "{754C1636-E7CE-48A8-88F6-32A6028AA030}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,14 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EA316BC8-D39B-49F6-84AE-8AABB33A3224}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EA316BC8-D39B-49F6-84AE-8AABB33A3224}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EA316BC8-D39B-49F6-84AE-8AABB33A3224}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EA316BC8-D39B-49F6-84AE-8AABB33A3224}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8ABE6D5F-0B1C-4A47-8B1B-C3C7B4CA891D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8ABE6D5F-0B1C-4A47-8B1B-C3C7B4CA891D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8ABE6D5F-0B1C-4A47-8B1B-C3C7B4CA891D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8ABE6D5F-0B1C-4A47-8B1B-C3C7B4CA891D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8E7A07C1-706E-4F67-8479-E23ACA09780C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8E7A07C1-706E-4F67-8479-E23ACA09780C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E7A07C1-706E-4F67-8479-E23ACA09780C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -36,6 +26,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8E7A07C1-706E-4F67-8479-E23ACA09780C} = {754C1636-E7CE-48A8-88F6-32A6028AA030}
+		{D441D921-1961-4147-A148-3B91D924C8F4} = {754C1636-E7CE-48A8-88F6-32A6028AA030}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {37991932-ABEE-4F29-85C3-A0AC81ECABF3}
