@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConvertNumberToXNotation", "ConvertNumberToXNotation\ConvertNumberToXNotation.csproj", "{64FA64A0-7C24-4C95-BF82-0D0294FA86FA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConvertNumberToXNotation.Test", "ConvertNumberToXNotation.Test\ConvertNumberToXNotation.Test.csproj", "{467BA0B4-8535-48A1-82E7-2D1087294B25}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64FA64A0-7C24-4C95-BF82-0D0294FA86FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64FA64A0-7C24-4C95-BF82-0D0294FA86FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64FA64A0-7C24-4C95-BF82-0D0294FA86FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64FA64A0-7C24-4C95-BF82-0D0294FA86FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{467BA0B4-8535-48A1-82E7-2D1087294B25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{467BA0B4-8535-48A1-82E7-2D1087294B25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{467BA0B4-8535-48A1-82E7-2D1087294B25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{467BA0B4-8535-48A1-82E7-2D1087294B25}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
