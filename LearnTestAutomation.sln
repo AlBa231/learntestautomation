@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehiclePrinter", "VehiclePrinter\VehiclePrinter.csproj", "{DF6C199D-63D4-4B3A-898E-BAB31187B715}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehiclePrinter.Test", "VehiclePrinter.Test\VehiclePrinter.Test.csproj", "{9A8EAF0F-6E92-4514-B2CB-46071868EF9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{DF6C199D-63D4-4B3A-898E-BAB31187B715}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF6C199D-63D4-4B3A-898E-BAB31187B715}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF6C199D-63D4-4B3A-898E-BAB31187B715}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A8EAF0F-6E92-4514-B2CB-46071868EF9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A8EAF0F-6E92-4514-B2CB-46071868EF9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A8EAF0F-6E92-4514-B2CB-46071868EF9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A8EAF0F-6E92-4514-B2CB-46071868EF9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
