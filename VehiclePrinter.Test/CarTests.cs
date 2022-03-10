@@ -3,7 +3,7 @@ using Xunit;
 
 namespace VehiclePrinter.Test
 {
-    public class ModelTests
+    public class CarTests
     {
         [Fact]
         public void TestCar()
