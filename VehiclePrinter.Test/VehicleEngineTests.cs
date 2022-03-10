@@ -33,5 +33,19 @@ namespace VehiclePrinter.Test
 
             Assert.Equal(1.1, engine.RoundedCapacity);
         }
+
+        [Fact]
+        public void TestEngineToString()
+        {
+            var engine = new VehicleEngine
+            {
+                Power = 170,
+                Capacity = 2362,
+                Type = EngineType.Gasoline,
+                SerialNumber = "2AZ-FE"
+            };
+
+            Assert.Equal("2.4 (170 hp), Gasoline", engine.ToString());
+        }
     }
 }
