@@ -6,7 +6,7 @@ namespace VehiclePrinter.Test
     public class CarTests
     {
         [Fact]
-        public void TestCar()
+        public void TestToString()
         {
             var engine = new VehicleEngine
             {
@@ -45,5 +45,4 @@ namespace VehiclePrinter.Test
 Automatic, 5 gears, Aisin Japan", car.ToString());
         }
     }
-
 }
