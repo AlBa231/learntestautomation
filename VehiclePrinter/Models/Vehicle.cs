@@ -12,7 +12,7 @@
         {
             return @$"{Make} {Model} {Engine}.
 {Chassis},
-{Transmission.Type}, {Transmission.GearsNumber} gears, {Transmission.Manufacturer}";
+{Transmission}";
         }
     }
 
@@ -24,7 +24,12 @@
     {
         public TransmissionType Type { get; set; }
         public int GearsNumber { get; set; }
-        public string Manufacturer { get; set; }
+        public string Manufacturer { get; set; } = null!;
+
+        public override string ToString()
+        {
+            return $"{Type}, {GearsNumber} gears, {Manufacturer}";
+        }
     }
 
     public class VehicleChassis
