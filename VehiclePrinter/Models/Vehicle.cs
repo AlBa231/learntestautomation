@@ -11,7 +11,7 @@
         public override string ToString()
         {
             return @$"{Make} {Model} {Engine}.
-{Chassis.WheelCount} wheels, {Chassis.MaxLoad} kg, {Chassis.Number},
+{Chassis},
 {Transmission.Type}, {Transmission.GearsNumber} gears, {Transmission.Manufacturer}";
         }
     }
@@ -30,8 +30,13 @@
     public class VehicleChassis
     {
         public int WheelCount { get; set; }
-        public string Number { get; set; }
+        public string Number { get; set; } = null!;
         public int MaxLoad { get; set; }
+
+        public override string ToString()
+        {
+            return $"{WheelCount} wheels, {MaxLoad} kg, {Number}";
+        }
     }
 
     public class VehicleEngine
