@@ -73,5 +73,43 @@ namespace VehiclePrinter
                 Width = 2540
             };
         }
+
+        public static Vehicle CreateBus()
+        {
+
+            var engine = new VehicleEngine
+            {
+                Power = 320,
+                Capacity = 10760,
+                Type = EngineType.Diesel,
+                SerialNumber = "2ABSSTZ-F34AAS11"
+            };
+
+            var chassis = new VehicleChassis
+            {
+                WheelCount = 12,
+                Number = "2315321D02321E",
+                MaxLoad = 14384
+            };
+
+            var transmission = new Transmission
+            {
+                Type = TransmissionType.Manual,
+                GearsNumber = 6,
+                Manufacturer = "Alarus Megatronics"
+            };
+
+            return new Bus
+            {
+                Engine = engine,
+                Chassis = chassis,
+                Transmission = transmission,
+                Model = "695",
+                Make = "Ikarus",
+                PassengerSeatCount = 50,
+                HandicappedSeatCount = 2,
+                HasToilet = true
+            };
+        }
     }
 }

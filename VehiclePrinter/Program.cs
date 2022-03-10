@@ -6,6 +6,7 @@ var cars = new []
 {
     VehicleFactory.CreateCar(),
     VehicleFactory.CreateTruck(),
+    VehicleFactory.CreateBus()
 };
 
 Console.WriteLine("Vehicles with specifications:!");

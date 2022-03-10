@@ -24,5 +24,16 @@ Automatic, 5 gears, Aisin Japan", car.ToString());
 Manual, 16 gears, Smart Electronic
 Dimensions (HxW): 3245x2540", truck.ToString());
         }
+
+        [Fact]
+        public void TestVehicleFactory_CreateBus()
+        {
+            var bus = VehicleFactory.CreateBus();
+            
+            Assert.Equal(@"Ikarus 695 10.8 (320 hp), Diesel (2ABSSTZ-F34AAS11).
+12 wheels, 14384 kg, 2315321D02321E,
+Manual, 6 gears, Alarus Megatronics
+Seats: 50 + 2, Toilet", bus.ToString());
+        }
     }
 }

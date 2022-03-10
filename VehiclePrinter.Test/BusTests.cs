@@ -41,8 +41,7 @@ public class BusTests
             HandicappedSeatCount = 2,
             HasToilet = true
         };
-
-
+        
         Assert.Equal(@"Ikarus 695 10.8 (320 hp), Diesel (2ABSSTZ-F34AAS11).
 12 wheels, 14384 kg, 2315321D02321E,
 Manual, 6 gears, Alarus Megatronics
