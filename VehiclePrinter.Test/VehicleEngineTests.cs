@@ -45,7 +45,7 @@ namespace VehiclePrinter.Test
                 SerialNumber = "2AZ-FE"
             };
 
-            Assert.Equal("2.4 (170 hp), Gasoline", engine.ToString());
+            Assert.Equal("2.4 (170 hp), Gasoline (2AZ-FE)", engine.ToString());
         }
     }
 }

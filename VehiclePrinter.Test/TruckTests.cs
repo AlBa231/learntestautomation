@@ -6,7 +6,7 @@ namespace VehiclePrinter.Test;
 public class TruckTests
 {
     [Fact]
-    public void TestToString()
+    public void TestTruckToString()
     {
         var engine = new VehicleEngine
         {
@@ -42,7 +42,7 @@ public class TruckTests
         };
 
 
-        Assert.Equal(@"Ford Cargo 12.7 (420 hp), Diesel.
+        Assert.Equal(@"Ford Cargo 12.7 (420 hp), Diesel (1AASDTZ-F34FwaE).
 9 wheels, 15205 kg, 83250D0102526,
 Manual, 16 gears, Smart Electronic
 Dimensions (HxW): 3245x2540", truck.ToString());

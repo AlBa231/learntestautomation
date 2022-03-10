@@ -10,6 +10,6 @@ public class VehicleEngine
 
     public override string ToString()
     {
-        return FormattableString.Invariant(@$"{RoundedCapacity} ({Power} hp), {Type}");
+        return FormattableString.Invariant(@$"{RoundedCapacity} ({Power} hp), {Type} ({SerialNumber})");
     }
 }

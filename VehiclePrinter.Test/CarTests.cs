@@ -6,7 +6,7 @@ namespace VehiclePrinter.Test
     public class CarTests
     {
         [Fact]
-        public void TestToString()
+        public void TestCarToString()
         {
             var engine = new VehicleEngine
             {
@@ -40,7 +40,7 @@ namespace VehiclePrinter.Test
             };
 
 
-            Assert.Equal(@"Toyota Camry 2.4 (170 hp), Gasoline.
+            Assert.Equal(@"Toyota Camry 2.4 (170 hp), Gasoline (2AZ-FE).
 4 wheels, 570 kg, 231000Â0102526,
 Automatic, 5 gears, Aisin Japan", car.ToString());
         }
