@@ -10,9 +10,9 @@
 
         public override string ToString()
         {
-            return FormattableString.Invariant(@$"{Make} {Model} {Engine.RoundedCapacity} ({Engine.Power} hp), {Engine.Type}.
+            return @$"{Make} {Model} {Engine}.
 {Chassis.WheelCount} wheels, {Chassis.MaxLoad} kg, {Chassis.Number},
-{Transmission.Type}, {Transmission.GearsNumber} gears, {Transmission.Manufacturer}");
+{Transmission.Type}, {Transmission.GearsNumber} gears, {Transmission.Manufacturer}";
         }
     }
 
