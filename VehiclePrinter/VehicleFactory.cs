@@ -37,5 +37,41 @@ namespace VehiclePrinter
                 Make = "Toyota"
             };
         }
+
+        public static Vehicle CreateTruck()
+        {
+            var engine = new VehicleEngine
+            {
+                Power = 420,
+                Capacity = 12740,
+                Type = EngineType.Diesel,
+                SerialNumber = "1AASDTZ-F34FwaE"
+            };
+
+            var chassis = new VehicleChassis
+            {
+                WheelCount = 9,
+                Number = "83250D0102526",
+                MaxLoad = 15205
+            };
+
+            var transmission = new Transmission
+            {
+                Type = TransmissionType.Manual,
+                GearsNumber = 16,
+                Manufacturer = "Smart Electronic"
+            };
+
+            return new Truck
+            {
+                Engine = engine,
+                Chassis = chassis,
+                Transmission = transmission,
+                Model = "Cargo",
+                Make = "Ford",
+                Height = 3245,
+                Width = 2540
+            };
+        }
     }
 }

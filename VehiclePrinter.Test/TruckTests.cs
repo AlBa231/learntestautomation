@@ -40,8 +40,7 @@ public class TruckTests
             Height = 3245,
             Width = 2540
         };
-
-
+        
         Assert.Equal(@"Ford Cargo 12.7 (420 hp), Diesel (1AASDTZ-F34FwaE).
 9 wheels, 15205 kg, 83250D0102526,
 Manual, 16 gears, Smart Electronic
