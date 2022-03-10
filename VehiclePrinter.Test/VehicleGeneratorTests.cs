@@ -35,5 +35,16 @@ Dimensions (HxW): 3245x2540", truck.ToString());
 Manual, 6 gears, Alarus Megatronics
 Seats: 50 + 2, Toilet", bus.ToString());
         }
+
+        [Fact]
+        public void TestVehicleFactory_CreateScooter()
+        {
+            var scooter = VehicleFactory.CreateScooter();
+
+            Assert.Equal(@"MUSSTANG Alfa 0.1 (8 hp), Gasoline (2ABS22Z-F3123AS11).
+2 wheels, 180 kg, 1235324402321E,
+Manual, 2 gears, CHOHO 428
+Seats: 1, Alarm", scooter.ToString());
+        }
     }
 }

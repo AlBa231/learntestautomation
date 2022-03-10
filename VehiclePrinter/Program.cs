@@ -2,11 +2,12 @@
 using VehiclePrinter;
 using VehiclePrinter.Models;
 
-var cars = new []
+var cars = new Vehicle[]
 {
     VehicleFactory.CreateCar(),
     VehicleFactory.CreateTruck(),
-    VehicleFactory.CreateBus()
+    VehicleFactory.CreateBus(),
+    VehicleFactory.CreateScooter()
 };
 
 Console.WriteLine("Vehicles with specifications:!");

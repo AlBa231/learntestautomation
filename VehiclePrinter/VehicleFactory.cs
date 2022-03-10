@@ -4,7 +4,7 @@ namespace VehiclePrinter
 {
     public static class VehicleFactory
     {
-        public static Vehicle CreateCar()
+        public static Car CreateCar()
         {
             var engine = new VehicleEngine
             {
@@ -38,7 +38,7 @@ namespace VehiclePrinter
             };
         }
 
-        public static Vehicle CreateTruck()
+        public static Truck CreateTruck()
         {
             var engine = new VehicleEngine
             {
@@ -74,7 +74,7 @@ namespace VehiclePrinter
             };
         }
 
-        public static Vehicle CreateBus()
+        public static Bus CreateBus()
         {
 
             var engine = new VehicleEngine
@@ -109,6 +109,42 @@ namespace VehiclePrinter
                 PassengerSeatCount = 50,
                 HandicappedSeatCount = 2,
                 HasToilet = true
+            };
+        }
+
+        public static Scooter CreateScooter()
+        {
+            var engine = new VehicleEngine
+            {
+                Power = 8,
+                Capacity = 125,
+                Type = EngineType.Gasoline,
+                SerialNumber = "2ABS22Z-F3123AS11"
+            };
+
+            var chassis = new VehicleChassis
+            {
+                WheelCount = 2,
+                Number = "1235324402321E",
+                MaxLoad = 180
+            };
+
+            var transmission = new Transmission
+            {
+                Type = TransmissionType.Manual,
+                GearsNumber = 2,
+                Manufacturer = "CHOHO 428"
+            };
+
+            return new Scooter
+            {
+                Engine = engine,
+                Chassis = chassis,
+                Transmission = transmission,
+                Model = "Alfa",
+                Make = "MUSSTANG",
+                HasAlarm = true,
+                SeatCount = 1
             };
         }
     }

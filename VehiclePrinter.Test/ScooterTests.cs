@@ -40,8 +40,7 @@ public class ScooterTests
             HasAlarm = true,
             SeatCount = 1
         };
-
-
+        
         Assert.Equal(@"MUSSTANG Alfa 0.1 (8 hp), Gasoline (2ABS22Z-F3123AS11).
 2 wheels, 180 kg, 1235324402321E,
 Manual, 2 gears, CHOHO 428
