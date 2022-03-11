@@ -2,8 +2,15 @@
 
 public record PointZ(int X, int Y, int Z)
 {
-    public static PointZ operator -(PointZ a, PointZ b)
+    /// <summary>
+    /// Find distance between two points.
+    /// </summary>
+    /// <returns></returns>
+    public static double operator -(PointZ start, PointZ end)
     {
-        return new PointZ(a.X - b.X, a.Y - b.Y, a.Z - b.Z);
+        var x = start.X - end.X;
+        var y = start.Y - end.Y;
+        var z = start.Z - end.Z;
+        return Math.Round(Math.Sqrt(x * x + y * y + z * z), 2);
     }
 }
