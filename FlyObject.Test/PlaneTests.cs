@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
+﻿using Xunit;
 
 namespace FlyObject.Test
 {
@@ -14,7 +9,7 @@ namespace FlyObject.Test
         {
             var plane = new Plane
             {
-                StartSpeed = 200
+                Speed = 200
             };
 
             var startPoint = new PointZ(10, 10, 10);
@@ -29,7 +24,7 @@ namespace FlyObject.Test
         {
             var plane = new Plane
             {
-                StartSpeed = 200
+                Speed = 200
             };
 
             var startPoint = new PointZ(10, 10, 10);
