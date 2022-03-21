@@ -13,8 +13,11 @@
         /// The time to hang for Drone after <see cref="HangTimeout"/> elapsed.
         /// </summary>
         public TimeSpan HangTime { get; set; } = TimeSpan.FromMinutes(1);
-
-        public int Speed { get; init; } = DefaultStartSpeed;
+        
+        public Drone()
+        {
+            Speed = DefaultStartSpeed;
+        }
 
         public override double GetFlyTime(PointZ newPoint)
         {
