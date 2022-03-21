@@ -1,7 +1,14 @@
-﻿namespace FlyObject;
+﻿using FlyObject.Lib;
+
+namespace FlyObject;
 
 public record PointZ(int X, int Y, int Z)
 {
+    public PointZ(int[] points) : this(points[0], points[1], points[2]){}
+
+    public PointZ(string xyzBySpaces):this(xyzBySpaces.ToIntArray()) { }
+    
+
     /// <summary>
     /// Find distance between two points.
     /// </summary>

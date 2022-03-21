@@ -31,16 +31,12 @@ IFlyable SelectFlyable()
     return FlyableFactory.GetFlyable(Console.ReadKey().KeyChar);
 }
 
-PointZ ReadPointZ()
+PointZ? ReadPointZ()
 {
     var pointsLine = Console.ReadLine();
 
-    if (pointsLine == null) throw new FlyableException("Point is not specified.");
-
-    var points = pointsLine.Split(' ').Select(s => int.Parse(s, CultureInfo.InvariantCulture)).ToList();
-
-    if (points.Count < 3) throw new FlyableException("Point is invalid.");
-
-    return new PointZ(points[0], points[1], points[2]);
+    if (pointsLine == null) return null;
+    
+    return new PointZ(pointsLine);
 }
 
