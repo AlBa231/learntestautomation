@@ -9,5 +9,6 @@ namespace FlyObject.Test
 {
     public class FlyableOperationManagerTests
     {
+        
     }
 }
