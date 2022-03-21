@@ -19,14 +19,14 @@
             Speed = DefaultStartSpeed;
         }
 
-        protected override double GetFlyTimeWithoutRestrictions(double distance)
+        protected override double GetFlyTimeWithoutRestrictions()
         {
-            var timeWithoutHang = distance / Speed;
+            var timeWithoutHang = Distance / Speed;
 
             var hangTime = CalculateHangTime(timeWithoutHang);
 
 
-            return Math.Round(distance / Speed + hangTime, 2);
+            return Math.Round(Distance / Speed + hangTime, 2);
         }
 
         private double CalculateHangTime(double timeWithoutHang)

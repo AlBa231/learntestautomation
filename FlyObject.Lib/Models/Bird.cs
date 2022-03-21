@@ -11,8 +11,8 @@ public class Bird : Flyable
         Restrictions.Add(new MaxSpeedRestriction(MaxSpeed));
     }
 
-    protected override double GetFlyTimeWithoutRestrictions(double distance)
+    protected override double GetFlyTimeWithoutRestrictions()
     {
-        return Math.Round(distance / Speed, 2);
+        return Math.Round(Distance / Speed, 2);
     }
 }

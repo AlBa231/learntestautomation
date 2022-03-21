@@ -5,7 +5,15 @@ namespace FlyObject
     public abstract class Flyable : IFlyable
     {
         protected PointZ CurrentPosition { get; private set; } = PointZ.Zero;
+
+        protected PointZ NewPosition { get; private set; } = PointZ.Zero;
+
         public int Speed { get; init; }
+
+        /// <summary>
+        /// The distance between CurrentPosition and NewPosition.
+        /// </summary>
+        internal double Distance => NewPosition - CurrentPosition;
 
         public List<IRestriction> Restrictions { get; } = new();
 
@@ -21,11 +29,12 @@ namespace FlyObject
 
         public double GetFlyTime(PointZ newPoint)
         {
+            NewPosition = newPoint;
             CheckIsFlyRestricted();
-            return GetFlyTimeWithoutRestrictions(newPoint - CurrentPosition);
+            return GetFlyTimeWithoutRestrictions();
         }
 
-        protected abstract double GetFlyTimeWithoutRestrictions(double distance);
+        protected abstract double GetFlyTimeWithoutRestrictions();
 
         private void CheckIsFlyRestricted()
         {
@@ -39,7 +48,5 @@ namespace FlyObject
         {
             return !restriction.Validate(this);
         }
-
-
     }
 }

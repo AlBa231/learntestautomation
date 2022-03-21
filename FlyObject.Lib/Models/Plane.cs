@@ -11,11 +11,11 @@ public class Plane : Flyable
         Speed = DefaultStartSpeed;
     }
     
-    protected override double GetFlyTimeWithoutRestrictions(double distance)
+    protected override double GetFlyTimeWithoutRestrictions()
     {
-        var increaseCount = (int) distance / SpeedIncreaseDistance - 1;
+        var increaseCount = (int) Distance / SpeedIncreaseDistance - 1;
         var avgSpeed = Speed + increaseCount * SpeedIncrease / 2;
 
-        return Math.Round(distance / avgSpeed, 2);
+        return Math.Round(Distance / avgSpeed, 2);
     }
 }

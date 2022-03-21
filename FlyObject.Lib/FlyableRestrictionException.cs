@@ -35,7 +35,7 @@ public class FlyableRestrictionException : Exception
         var sbResult = new StringBuilder();
         foreach (var restriction in failedRestrictions)
         {
-            sbResult.AppendLine($"Failed restriction {restriction.GetType().Name}.");
+            sbResult.AppendLine($"Failed restriction {restriction.GetType().Name}. {restriction.ErrorMessage}.");
         }
 
         return sbResult.ToString();

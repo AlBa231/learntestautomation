@@ -3,6 +3,7 @@
     public class MinSpeedRestriction: IRestriction
     {
         public int MinimalSpeed { get; }
+        public string? ErrorMessage { get; private set; }
 
         public MinSpeedRestriction(int minimalSpeed)
         {
@@ -11,7 +12,11 @@
 
         public bool Validate(Flyable flyable)
         {
-            if (flyable.Speed < MinimalSpeed) return false;
+            if (flyable.Speed < MinimalSpeed)
+            {
+                ErrorMessage = $"Speed {flyable.Speed} is less than {MinimalSpeed}.";
+                return false;
+            }
             return true;
         }
     }
