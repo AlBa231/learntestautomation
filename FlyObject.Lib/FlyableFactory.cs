@@ -1,4 +1,6 @@
-﻿namespace FlyObject.Lib
+﻿using FlyObject.Lib.Models;
+
+namespace FlyObject.Lib
 {
     public static class FlyableFactory
     {

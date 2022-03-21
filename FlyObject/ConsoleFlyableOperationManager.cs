@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FlyObject.Lib;
+using FlyObject.Lib.Models;
 
 namespace FlyObject
 {

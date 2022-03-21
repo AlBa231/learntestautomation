@@ -1,6 +1,6 @@
 ﻿using FlyObject.Lib.Restrictions;
 
-namespace FlyObject;
+namespace FlyObject.Lib.Models;
 
 public class Bird : Flyable
 {

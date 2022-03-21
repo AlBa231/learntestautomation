@@ -1,4 +1,5 @@
 ﻿using FlyObject.Lib;
+using FlyObject.Lib.Models;
 using Xunit;
 
 namespace FlyObject.Test

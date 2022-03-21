@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using FlyObject.Lib.Models;
 using FlyObject.Lib.Restrictions;
 using Xunit;
 

@@ -1,4 +1,4 @@
-﻿namespace FlyObject
+﻿namespace FlyObject.Lib.Models
 {
     public class Drone : Flyable
     {

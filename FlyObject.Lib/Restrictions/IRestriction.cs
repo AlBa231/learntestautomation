@@ -1,4 +1,6 @@
-﻿namespace FlyObject.Lib.Restrictions
+﻿using FlyObject.Lib.Models;
+
+namespace FlyObject.Lib.Restrictions
 {
     public interface IRestriction
     {
