@@ -16,9 +16,18 @@ namespace FlyObject.Test
         }
 
         [Fact]
+        public void TestBirdMaxSpeedRestriction()
+        {
+            var flyable = new Bird { Speed = 21 };
+
+            Assert.Throws<FlyableRestrictionException>(() => flyable.GetFlyTime(new PointZ("1 2 3")));
+        }
+
+        [Fact]
         public void TestNoRestrictionForBird()
         {
             var flyable = new Bird { Speed = 10 };
+            flyable.Restrictions.RemoveAll(r => r is MinSpeedRestriction);
             flyable.Restrictions.Add(new MinSpeedRestriction(2));
 
             flyable.GetFlyTime(new PointZ("1 2 3"));

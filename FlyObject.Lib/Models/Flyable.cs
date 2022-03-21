@@ -9,6 +9,11 @@ namespace FlyObject
 
         public List<IRestriction> Restrictions { get; } = new();
 
+        protected Flyable()
+        {
+            Restrictions.Add(new MinSpeedRestriction(0));
+        }
+
         public void FlyTo(PointZ newPoint)
         {
             CurrentPosition = newPoint;
