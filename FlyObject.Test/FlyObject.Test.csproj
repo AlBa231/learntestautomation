@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FlyObject\FlyObject.csproj" />
+    <ProjectReference Include="..\FlyObject.Lib\FlyObject.Lib.csproj" />
   </ItemGroup>
 
 </Project>

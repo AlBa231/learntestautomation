@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlyObject", "FlyObject\FlyO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlyObject.Test", "FlyObject.Test\FlyObject.Test.csproj", "{6BCEC8F5-BD52-470B-BCD0-B001D976FF5A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlyObject.Lib", "FlyObject.Lib\FlyObject.Lib.csproj", "{B093F1AF-7F98-411E-9EA4-C0BDC81BD8B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6BCEC8F5-BD52-470B-BCD0-B001D976FF5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BCEC8F5-BD52-470B-BCD0-B001D976FF5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BCEC8F5-BD52-470B-BCD0-B001D976FF5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B093F1AF-7F98-411E-9EA4-C0BDC81BD8B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B093F1AF-7F98-411E-9EA4-C0BDC81BD8B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B093F1AF-7F98-411E-9EA4-C0BDC81BD8B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B093F1AF-7F98-411E-9EA4-C0BDC81BD8B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
