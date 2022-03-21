@@ -2,8 +2,6 @@
 
 public class Bird : Flyable
 {
-    public int Speed { get; init; }
-
     public override double GetFlyTime(PointZ newPoint)
     {
         var diff = newPoint - CurrentPosition;
