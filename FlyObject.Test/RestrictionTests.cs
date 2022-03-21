@@ -27,21 +27,21 @@ namespace FlyObject.Test
         public void TestNoRestrictionForBird()
         {
             var flyable = new Bird { Speed = 10 };
-            flyable.Restrictions.RemoveAll(r => r is MinSpeedRestriction);
-            flyable.Restrictions.Add(new MinSpeedRestriction(2));
+            flyable.Restrictions.Add(new MinSpeedRestriction(9));
+            flyable.Restrictions.Add(new MaxSpeedRestriction(11));
 
             flyable.GetFlyTime(new PointZ("1 2 3"));
-
             var minSpeedRestriction = flyable.Restrictions.OfType<MinSpeedRestriction>().First();
+            var maxSpeedRestriction = flyable.Restrictions.OfType<MaxSpeedRestriction>().First();
 
-            Assert.Equal(2, minSpeedRestriction.MinimalSpeed);
+            Assert.Equal(9, minSpeedRestriction.MinimalSpeed);
+            Assert.Equal(11, maxSpeedRestriction.MaxSpeed);
         }
 
         [Fact]
         public void TestDroneMaxRestrictionOk()
         {
             var flyable = new Drone {  };
-            flyable.Restrictions.RemoveAll(r => r is MaxDistanceRestriction);
             flyable.Restrictions.Add(new MaxDistanceRestriction(20));
 
             flyable.GetFlyTime(new PointZ("20 0 0"));
@@ -55,7 +55,6 @@ namespace FlyObject.Test
         public void TestDroneMaxRestrictionOkLongPosition()
         {
             var flyable = new Drone {  };
-            flyable.Restrictions.RemoveAll(r => r is MaxDistanceRestriction);
             flyable.Restrictions.Add(new MaxDistanceRestriction(20));
 
             flyable.FlyTo(new PointZ("120 30 40"));
@@ -72,7 +71,6 @@ namespace FlyObject.Test
         public void TestDroneMaxRestrictionFailed()
         {
             var flyable = new Drone();
-            flyable.Restrictions.RemoveAll(r => r is MaxDistanceRestriction);
             flyable.Restrictions.Add(new MaxDistanceRestriction(20));
 
             Assert.Throws<FlyableRestrictionException>(() => flyable.GetFlyTime(new PointZ("21 0 0")));

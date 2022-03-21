@@ -15,7 +15,7 @@ namespace FlyObject
         /// </summary>
         internal double Distance => NewPosition - CurrentPosition;
 
-        public List<IRestriction> Restrictions { get; } = new();
+        public RestrictionList Restrictions { get; } = new();
 
         protected Flyable()
         {

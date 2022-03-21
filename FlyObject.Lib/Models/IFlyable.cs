@@ -10,6 +10,6 @@ namespace FlyObject
 
         public double GetFlyTime(PointZ newPoint);
 
-        public List<IRestriction> Restrictions { get; }
+        public RestrictionList Restrictions { get; }
     }
 }
