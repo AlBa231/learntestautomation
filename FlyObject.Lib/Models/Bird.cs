@@ -2,10 +2,8 @@
 
 public class Bird : Flyable
 {
-    public override double GetFlyTime(PointZ newPoint)
+    protected override double GetFlyTimeWithoutRestrictions(double distance)
     {
-        var diff = newPoint - CurrentPosition;
-
-        return Math.Round(diff / Speed, 2);
+        return Math.Round(distance / Speed, 2);
     }
 }

@@ -19,10 +19,8 @@
             Speed = DefaultStartSpeed;
         }
 
-        public override double GetFlyTime(PointZ newPoint)
+        protected override double GetFlyTimeWithoutRestrictions(double distance)
         {
-            var distance = newPoint - CurrentPosition;
-
             var timeWithoutHang = distance / Speed;
 
             var hangTime = CalculateHangTime(timeWithoutHang);

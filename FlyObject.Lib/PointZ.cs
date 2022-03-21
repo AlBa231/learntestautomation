@@ -4,6 +4,11 @@ namespace FlyObject;
 
 public record PointZ(int X, int Y, int Z)
 {
+    /// <summary>
+    /// Coordinate with X=0, Y=0, Z=0.
+    /// </summary>
+    public static PointZ Zero { get; } = new (0, 0, 0);
+
     public PointZ(int[] points) : this(points[0], points[1], points[2]){}
 
     public PointZ(string xyzBySpaces):this(xyzBySpaces.ToIntArray()) { }
