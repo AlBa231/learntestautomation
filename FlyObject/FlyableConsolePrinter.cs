@@ -29,5 +29,10 @@ namespace FlyObject
         {
             return int.Parse(Console.ReadLine()!, CultureInfo.InvariantCulture);
         }
+
+        public string ReadLine()
+        {
+            return Console.ReadLine() ?? string.Empty;
+        }
     }
 }

@@ -7,5 +7,6 @@
         public void Clear();
         public char ReadChar();
         public int ReadNumber();
+        public string ReadLine();
     }
 }

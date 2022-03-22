@@ -13,4 +13,5 @@ class TestDummyPrinter: IFlyablePrinter
     public char ReadChar() => 'Q';
 
     public int ReadNumber() => 10;
+    public string ReadLine() => "1 2 3";
 }
