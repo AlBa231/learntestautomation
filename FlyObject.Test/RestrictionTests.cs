@@ -42,7 +42,7 @@ namespace FlyObject.Test
         [Fact]
         public void TestDroneMaxRestrictionOk()
         {
-            var flyable = new Drone {  };
+            var flyable = new Drone();
             flyable.Restrictions.Add(new MaxDistanceRestriction(20));
 
             flyable.GetFlyTime(new PointZ("20 0 0"));
@@ -55,7 +55,7 @@ namespace FlyObject.Test
         [Fact]
         public void TestDroneMaxRestrictionOkLongPosition()
         {
-            var flyable = new Drone {  };
+            var flyable = new Drone();
             flyable.Restrictions.Add(new MaxDistanceRestriction(20));
 
             flyable.FlyTo(new PointZ("120 30 40"));

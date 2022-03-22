@@ -1,10 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using System.Globalization;
 using FlyObject;
-using FlyObject.Lib;
 
-var flyableManager = new ConsoleFlyableOperationManager();
+var flyableManager = new ConsoleFlyableOperationManager(new FlyableConsolePrinter());
 
 flyableManager.Start();
 
