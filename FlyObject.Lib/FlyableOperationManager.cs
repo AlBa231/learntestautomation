@@ -4,18 +4,26 @@ using FlyObject.Lib.Models;
 
 namespace FlyObject.Lib
 {
-    public abstract class FlyableOperationManager
+    public class FlyableOperationManager
     {
         private readonly IFlyablePrinter flyablePrinter;
         private IFlyable? currentFlyable;
         private readonly List<FlyableCommandInfo> availableCommands = new();
 
-        protected FlyableOperationManager(IFlyablePrinter flyablePrinter)
+        public FlyableOperationManager(IFlyablePrinter flyablePrinter)
         {
             this.flyablePrinter = flyablePrinter;
         }
+        
+        public void Start()
+        {
+            while (true)
+            {
+                TryProcessOperation();
+            }
+        }
 
-        protected void TryProcessOperation()
+        private void TryProcessOperation()
         {
             try
             {
