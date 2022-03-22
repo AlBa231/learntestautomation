@@ -8,24 +8,11 @@ namespace FlyObject.Lib
     {
         private readonly IFlyablePrinter flyablePrinter;
         private IFlyable? currentFlyable;
+        private readonly List<FlyableCommandInfo> availableCommands = new();
 
         protected FlyableOperationManager(IFlyablePrinter flyablePrinter)
         {
             this.flyablePrinter = flyablePrinter;
-        }
-
-        protected void PrintOperations()
-        {
-            flyablePrinter.Clear();
-            flyablePrinter.WriteLine("Lets check speed of:");
-
-            flyablePrinter.WriteLine("1 - Bird");
-            flyablePrinter.WriteLine("2 - Plane");
-            flyablePrinter.WriteLine("3 - Drone");
-
-            flyablePrinter.WriteLine("Q - Quit");
-
-            flyablePrinter.WriteLine();
         }
 
         protected void TryProcessOperation()
@@ -42,33 +29,43 @@ namespace FlyObject.Lib
 
         private void ProcessOperation()
         {
-            var commandKey = char.ToUpper(flyablePrinter.ReadChar());
-            var command = CommandFactory.CreateCommand(currentFlyable, commandKey);
-            command.Execute();
-            
-            currentFlyable = FlyableFactory.GetFlyable(commandKey);
-
             PrintFlyableInfo();
-
-            var flyableCommand = flyablePrinter.ReadChar();
+            PrintCommands();
+            ProcessCommand();
         }
 
         private void PrintFlyableInfo()
         {
             flyablePrinter.Clear();
+            if (currentFlyable == null) return;
             flyablePrinter.WriteLine($"Selected {currentFlyable.GetType().Name}");
             flyablePrinter.WriteLine($"Speed - {currentFlyable.Speed}");
-
             flyablePrinter.WriteLine();
-            flyablePrinter.WriteLine("Select operation:");
-            flyablePrinter.WriteLine("1 - set fly start point");
-            flyablePrinter.WriteLine("2 - calculate fly time");
-            flyablePrinter.WriteLine("3 - set fly speed");
-            flyablePrinter.WriteLine("R - show restrictions");
+        }
 
-            //custom commands
-            //bird
-            flyablePrinter.WriteLine("4 - set fly speed");
+        private void PrintCommands()
+        {
+            UpdateCommands();
+            flyablePrinter.Clear();
+            flyablePrinter.WriteLine("Select operation:");
+            foreach (var command in availableCommands)
+            {
+                flyablePrinter.WriteLine($"{command.CommandKey} - {command.Description}");
+            }
+        }
+
+        private void UpdateCommands()
+        {
+            availableCommands.Clear();
+            availableCommands.AddRange(CommandFactory.GetAvailableCommands(currentFlyable));
+        }
+
+        private void ProcessCommand()
+        {
+            var commandKey = char.ToUpper(flyablePrinter.ReadChar());
+            var command = availableCommands.FirstOrDefault(cmd => cmd.CommandKey == commandKey)
+                ?? throw new FlyableException($"Command '{commandKey}' is not found.");
+            currentFlyable = command.Execute(currentFlyable);
         }
     }
 }

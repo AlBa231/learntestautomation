@@ -2,14 +2,13 @@
 
 namespace FlyObject.Lib.Commands
 {
-    [CommandKey('Q')]
+    [CommandKey('Q', "Quit")]
     public class QuitCommand : IFlyableCommand
     {
-        public IFlyable? Flyable { get; set; }
-
-        public void Execute()
+        public IFlyable Execute()
         {
             Environment.Exit(0);
+            return null;
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using FlyObject.Lib.Commands;
-using FlyObject.Lib.Models;
 using Xunit;
 
 namespace FlyObject.Test
@@ -10,12 +9,12 @@ namespace FlyObject.Test
         public void TestFindCommand()
         {
             var commandKey = 'Q';
-            var flyable = new Bird();
 
-            var command = CommandFactory.CreateCommand(flyable, commandKey);
+            var commandInfo = CommandFactory.FindCommand(commandKey);
 
-            Assert.NotNull(command);
-            Assert.IsType<QuitCommand>(command);
+            Assert.NotNull(commandInfo);
+            Assert.Equal(typeof(QuitCommand), commandInfo.CommandType);
         }
+
     }
 }

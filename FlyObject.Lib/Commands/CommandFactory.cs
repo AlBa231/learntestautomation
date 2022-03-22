@@ -5,39 +5,23 @@ namespace FlyObject.Lib.Commands
 {
     public static class CommandFactory
     {
-        private static readonly Dictionary<char, Type> Types = new();
+        private static readonly Dictionary<char, FlyableCommandInfo> AllCommands = RegisterAllTypes().ToDictionary(f=>f.CommandKey, f=>f);
 
-
-        public static IFlyableCommand CreateCommand(IFlyable? flyable, char commandChar)
+        public static FlyableCommandInfo FindCommand(char commandKey)
         {
-            if (Types.Count == 0)
-                RegisterAllTypes();
-            if (Types.ContainsKey(commandChar))
-            {
-                return CreateCommand(flyable, Types[commandChar]);
-            }
-
-            throw new FlyableException($"Command for char {commandChar} is not found");
+            return AllCommands[commandKey];
+        }
+        public static IEnumerable<FlyableCommandInfo> GetAvailableCommands(IFlyable? currentFlyable)
+        {
+            if (currentFlyable is not null) return AllCommands.Values.Where(val => val.IsFlyableCommand);
+            return AllCommands.Values.Where(val => !val.IsFlyableCommand);
         }
 
-        private static IFlyableCommand CreateCommand(IFlyable? flyable, Type commandType)
-        {
-            var command = Activator.CreateInstance(commandType) as IFlyableCommand ?? throw new InvalidOperationException();
-            command.Flyable = flyable;
-            return command;
-        }
-
-        private static void RegisterAllTypes()
+        private static IEnumerable<FlyableCommandInfo> RegisterAllTypes()
         {
             var allFlyableCommandTypes = Assembly.GetExecutingAssembly().GetTypes().Where(IsFlyableCommandType);
 
-            foreach (var flyableCommandType in allFlyableCommandTypes)
-            {
-                var commandKeyAttribute = flyableCommandType.GetCustomAttribute<CommandKeyAttribute>();
-                if (commandKeyAttribute == null)
-                    throw new FlyableException($"Command {flyableCommandType.FullName} does not implement CommandKeyAttribute.");
-                Types.Add(commandKeyAttribute.TestChar, flyableCommandType);
-            }
+            return allFlyableCommandTypes.Select(f => new FlyableCommandInfo(f));
         }
 
         private static bool IsFlyableCommandType(Type type)

@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FlyObject.Lib;
+﻿using FlyObject.Lib;
 using FlyObject.Lib.FlyablePrinter;
-using FlyObject.Lib.Models;
 
 namespace FlyObject
 {
@@ -18,8 +12,6 @@ namespace FlyObject
             
             while (isWorking)
             {
-                PrintOperations();
-
                 TryProcessOperation();
             }
         }

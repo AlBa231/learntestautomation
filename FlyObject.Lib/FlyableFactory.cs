@@ -1,4 +1,5 @@
-﻿using FlyObject.Lib.Models;
+﻿using FlyObject.Lib.Commands;
+using FlyObject.Lib.Models;
 
 namespace FlyObject.Lib
 {
