@@ -23,7 +23,8 @@ namespace FlyObject.Lib
             }
             catch (FlyableException e)
             {
-                flyablePrinter.WriteLine($"Error - {e.Message}. Return to main menu.");
+                currentFlyable = null;
+                flyablePrinter.WriteLine($"Error - {e.Message}. Returning to main menu.");
             }
         }
 
@@ -46,7 +47,6 @@ namespace FlyObject.Lib
         private void PrintCommands()
         {
             UpdateCommands();
-            flyablePrinter.Clear();
             flyablePrinter.WriteLine("Select operation:");
             foreach (var command in availableCommands)
             {

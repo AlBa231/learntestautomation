@@ -36,10 +36,7 @@ namespace FlyObject.Lib.Commands
         public IFlyable? Execute(IFlyable? currentFlyable)
         {
             var command = CreateCommand(currentFlyable);
-            command.Execute();
-            if (command is IFlyableRequiredCommand flyableCommand)
-                return flyableCommand.Flyable;
-            return currentFlyable;
+            return command.Execute();
         }
     }
 }
