@@ -2,7 +2,7 @@
 using VehiclePrinter;
 using VehiclePrinter.Models;
 
-var vehicles = new List<Vehicle>(new int[10].Select(_ => RandomVehicleFactory.CreateRandomVehicle()));
+var vehicles = RandomVehicleFactory.CreateRandomVehicles(10);
 
 Console.WriteLine("Vehicles with specifications:!");
 

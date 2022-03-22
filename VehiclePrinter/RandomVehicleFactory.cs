@@ -4,9 +4,14 @@ namespace VehiclePrinter
 {
     public static class RandomVehicleFactory
     {
+        public static VehicleList CreateRandomVehicles(int count)
+        {
+            return new VehicleList(new int[count].Select(_ => RandomVehicleFactory.CreateRandomVehicle()));
+        }
+
         public static Vehicle CreateRandomVehicle()
         {
-            return Random.Shared.Next(3) switch
+            return Random.Shared.Next(4) switch
             {
                 0 => CreateCar(),
                 1 => CreateTruck(),
