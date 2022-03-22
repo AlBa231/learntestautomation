@@ -21,7 +21,7 @@ namespace FlyObject.Lib.Commands
         {
             var allFlyableCommandTypes = Assembly.GetExecutingAssembly().GetTypes().Where(IsFlyableCommandType);
 
-            return allFlyableCommandTypes.Select(f => new FlyableCommandInfo(f));
+            return allFlyableCommandTypes.Select(f => new FlyableCommandInfo(f)).OrderBy(f=>f.CommandKey);
         }
 
         private static bool IsFlyableCommandType(Type type)

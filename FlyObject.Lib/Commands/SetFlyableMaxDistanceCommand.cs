@@ -41,6 +41,7 @@ public class GetFlyTimeToCommand : IFlyableRequiredCommand, IFlyablePrinterComma
         var time = Flyable.GetFlyTime(newPoint);
         Printer.WriteLine();
         Printer.WriteLine("The time for fly is " + time);
+        Printer.ReadChar();
         return Flyable;
     }
 }

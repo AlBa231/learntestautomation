@@ -24,7 +24,10 @@ namespace FlyObject.Lib
             catch (FlyableException e)
             {
                 currentFlyable = null;
+                flyablePrinter.Clear();
                 flyablePrinter.WriteLine($"Error - {e.Message}. Returning to main menu.");
+                flyablePrinter.WriteLine($"Press any key to continue...");
+                flyablePrinter.ReadChar();
             }
         }
 
@@ -38,8 +41,8 @@ namespace FlyObject.Lib
 
         private void PrintFlyableInfo()
         {
-            flyablePrinter.Clear();
             if (currentFlyable == null) return;
+            flyablePrinter.Clear();
             flyablePrinter.WriteLine($"Selected {currentFlyable.GetType().Name}");
             flyablePrinter.WriteLine($"Speed - {currentFlyable.Speed}");
             flyablePrinter.WriteLine();
