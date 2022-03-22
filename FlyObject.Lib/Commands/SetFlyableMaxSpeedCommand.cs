@@ -15,6 +15,7 @@ public class SetFlyableMaxSpeedCommand : IFlyableRequiredCommand, IFlyablePrinte
     {
         if (Printer is null) throw new FlyableException("Printer is not specified");
         if (Flyable is null) throw new FlyableException("Flyable is not specified");
+        Printer.WriteLine();
         Printer.WriteLine("Enter a max speed restriction:");
         var number = Printer.ReadNumber();
         Flyable.Restrictions.Add(new MaxSpeedRestriction(number));
