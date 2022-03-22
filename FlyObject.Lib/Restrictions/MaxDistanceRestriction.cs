@@ -6,6 +6,7 @@ public class MaxDistanceRestriction : IRestriction
 {
     public double MaxDistance { get; }
     public string? ErrorMessage { get; private set; }
+    public string Description => MaxDistance.ToString("0.#");
 
     public MaxDistanceRestriction(double maxDistance)
     {

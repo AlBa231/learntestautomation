@@ -6,5 +6,6 @@
         public void WriteLine();
         public void Clear();
         public char ReadChar();
+        public int ReadNumber();
     }
 }

@@ -31,6 +31,7 @@ namespace FlyObject.Lib
         private void ProcessOperation()
         {
             PrintFlyableInfo();
+            PrintFlyableRestrictions();
             PrintCommands();
             ProcessCommand();
         }
@@ -43,6 +44,16 @@ namespace FlyObject.Lib
             flyablePrinter.WriteLine($"Speed - {currentFlyable.Speed}");
             flyablePrinter.WriteLine();
         }
+        private void PrintFlyableRestrictions()
+        {
+            if (currentFlyable == null) return;
+            flyablePrinter.WriteLine("Restrictions:");
+            foreach (var restriction in currentFlyable.Restrictions)
+            {
+                flyablePrinter.WriteLine($"{restriction.GetType().Name} [{restriction.Description}]");
+            }
+        }
+
 
         private void PrintCommands()
         {
@@ -65,7 +76,7 @@ namespace FlyObject.Lib
             var commandKey = char.ToUpper(flyablePrinter.ReadChar());
             var command = availableCommands.FirstOrDefault(cmd => cmd.CommandKey == commandKey)
                 ?? throw new FlyableException($"Command '{commandKey}' is not found.");
-            currentFlyable = command.Execute(currentFlyable);
+            currentFlyable = command.Execute(currentFlyable, flyablePrinter);
         }
     }
 }

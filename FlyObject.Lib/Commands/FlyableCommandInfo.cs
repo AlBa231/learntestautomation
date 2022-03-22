@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using FlyObject.Lib.FlyablePrinter;
 using FlyObject.Lib.Models;
 
 namespace FlyObject.Lib.Commands
@@ -24,19 +25,21 @@ namespace FlyObject.Lib.Commands
             CommandKey = commandKeyAttribute.TestChar;
             IsFlyableCommand = flyableCommandType.IsAssignableTo(typeof(IFlyableRequiredCommand));
         }
-        
-        private IFlyableCommand CreateCommand(IFlyable? flyable)
+
+        public IFlyable? Execute(IFlyable? currentFlyable, IFlyablePrinter printer)
+        {
+            var command = CreateCommand(currentFlyable, printer);
+            return command.Execute();
+        }
+
+        private IFlyableCommand CreateCommand(IFlyable? flyable, IFlyablePrinter printer)
         {
             var command = Activator.CreateInstance(CommandType) as IFlyableCommand ?? throw new InvalidOperationException();
             if (command is IFlyableRequiredCommand flyableRequiredCommand)
                 flyableRequiredCommand.Flyable = flyable;
+            if (command is IFlyablePrinterCommand flyablePrinterCommand)
+                flyablePrinterCommand.Printer = printer;
             return command;
-        }
-
-        public IFlyable? Execute(IFlyable? currentFlyable)
-        {
-            var command = CreateCommand(currentFlyable);
-            return command.Execute();
         }
     }
 }

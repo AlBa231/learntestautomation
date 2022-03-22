@@ -34,7 +34,7 @@ namespace FlyObject.Test
             var commandKey = 'B';
 
             var commandInfo = CommandFactory.FindCommand(commandKey);
-            var bird = commandInfo.Execute(null);
+            var bird = commandInfo.Execute(null, new TestDummyPrinter());
 
             Assert.NotNull(bird);
             Assert.IsType<Bird>(bird);
@@ -57,7 +57,7 @@ namespace FlyObject.Test
             var commandKey = 'D';
 
             var commandInfo = CommandFactory.FindCommand(commandKey);
-            var drone = commandInfo.Execute(null);
+            var drone = commandInfo.Execute(null, new TestDummyPrinter());
 
             Assert.NotNull(drone);
             Assert.IsType<Drone>(drone);
@@ -80,7 +80,7 @@ namespace FlyObject.Test
             var commandKey = 'P';
 
             var commandInfo = CommandFactory.FindCommand(commandKey);
-            var plane = commandInfo.Execute(null);
+            var plane = commandInfo.Execute(null, new TestDummyPrinter());
 
             Assert.NotNull(plane);
             Assert.IsType<Plane>(plane);

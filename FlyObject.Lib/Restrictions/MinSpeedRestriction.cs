@@ -6,6 +6,7 @@ namespace FlyObject.Lib.Restrictions
     {
         public int MinimalSpeed { get; }
         public string? ErrorMessage { get; private set; }
+        public string Description => MinimalSpeed.ToString("0.#");
 
         public MinSpeedRestriction(int minimalSpeed)
         {

@@ -1,4 +1,5 @@
-﻿using FlyObject.Lib.FlyablePrinter;
+﻿using System.Globalization;
+using FlyObject.Lib.FlyablePrinter;
 
 namespace FlyObject
 {
@@ -22,6 +23,11 @@ namespace FlyObject
         public char ReadChar()
         {
             return Console.ReadKey().KeyChar;
+        }
+
+        public int ReadNumber()
+        {
+            return int.Parse(Console.ReadLine()!, CultureInfo.InvariantCulture);
         }
     }
 }

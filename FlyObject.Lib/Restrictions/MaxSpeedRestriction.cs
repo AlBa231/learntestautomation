@@ -5,8 +5,8 @@ namespace FlyObject.Lib.Restrictions;
 public class MaxSpeedRestriction : IRestriction
 {
     public int MaxSpeed { get; }
-
     public string? ErrorMessage { get; private set; }
+    public string Description => MaxSpeed.ToString("0.#");
 
     public MaxSpeedRestriction(int maxSpeed)
     {
