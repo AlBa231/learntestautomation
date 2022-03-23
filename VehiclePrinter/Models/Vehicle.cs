@@ -24,6 +24,8 @@
             init { transmission = value; Validate(); }
         }
 
+        public string Id => Engine.SerialNumber;
+
         public string Model { get; set; } = null!;
         public string Make { get; set; } = null!;
 

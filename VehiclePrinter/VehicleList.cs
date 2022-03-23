@@ -46,6 +46,13 @@ namespace VehiclePrinter
             };
 
         }
+        public void ReplaceCarById(string id, Car car)
+        {
+            var index = items.FindIndex(v => v.Id == id);
+            if (index == -1)
+                throw new VehicleUpdateAutoException($"Vehicle with id {id} does not exists");
+            items[index] = car;
+        }
 
         #region IList Members
         public void Add(Vehicle item)
