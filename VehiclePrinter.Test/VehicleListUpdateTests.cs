@@ -21,9 +21,9 @@ namespace VehiclePrinter.Test
         public void TestUpdateAutoException()
         {
             var vehicleList = new VehicleList();
-            var car = new Car();
+            var car = RandomVehicleFactory.CreateCar();
 
-            Assert.Throws<VehicleAddException>(() => vehicleList.Add(car));
+            Assert.Throws<VehicleUpdateAutoException>(() => vehicleList.ReplaceCarById("bad", car));
         }
     }
 }

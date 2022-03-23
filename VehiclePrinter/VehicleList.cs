@@ -54,6 +54,14 @@ namespace VehiclePrinter
             items[index] = car;
         }
 
+        public void RemoveById(string id)
+        {
+            var index = items.FindIndex(v => v.Id == id);
+            if (index == -1)
+                throw new VehicleRemoveAutoException($"Vehicle with id {id} does not exists");
+            items.Remove(items[index]);
+        }
+
         #region IList Members
         public void Add(Vehicle item)
         {
