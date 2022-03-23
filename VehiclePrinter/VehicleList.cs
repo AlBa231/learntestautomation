@@ -37,6 +37,16 @@ namespace VehiclePrinter
             serializer.Serialize(fileStream, this);
         }
 
+        public Vehicle? GetAutoByParameter(string parameter, string value)
+        {
+            return parameter switch
+            {
+                "EngineNumber" => items.Find(v => v.Engine.SerialNumber == value),
+                _ => throw new VehicleGetAutoByParameterException($"Parameter {parameter} is not valid.")
+            };
+
+        }
+
         #region IList Members
         public void Add(Vehicle item)
         {
