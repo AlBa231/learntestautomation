@@ -48,7 +48,7 @@ namespace VehiclePrinter.Test
         {
             using var stream = new MemoryStream();
             var vehicles = RandomVehicleFactory.CreateRandomVehicles(5).GroupBy(g=>g.Transmission.Type)
-                .ToDictionary(g=>g.Key, g=>g.ToList());
+                .ToDictionary(g=>g.Key, g=>new VehicleList(g));
             var writer = new SimpleXmlWriter(vehicles);
 
             writer.Save(stream);

@@ -7,7 +7,7 @@ namespace VehiclePrinter
     public class SimpleXmlWriter
     {
         public object Item { get; }
-
+        
         public SimpleXmlWriter(object item)
         {
             Item = item ?? throw new ArgumentNullException(nameof(item));
@@ -26,7 +26,13 @@ namespace VehiclePrinter
 
         private XElement CreateXElement(object obj)
         {
-            return new XElement(obj.GetType().Name, GetPropertyXValue(obj));
+            return new XElement(GetXElementName(obj), GetPropertyXValue(obj));
+        }
+
+        private string GetXElementName(object obj)
+        {
+            if (obj is IDictionary dictionary) return dictionary.Values.GetType().GetGenericArguments()[1].Name;
+            return obj.GetType().Name;
         }
 
         private object GetPropertyXValue(object value)
@@ -36,8 +42,19 @@ namespace VehiclePrinter
 
         private IEnumerable<XElement> CreateChildNodes(object obj)
         {
-            if (obj is IEnumerable list) return list.Cast<object>().Select(CreateXElement);
+            if (obj is IDictionary dictionary) return CreateChildNodesForDictionary(dictionary);
+            if (obj is IEnumerable list) return CreateChildNodesForEnumerable(list);
             return CreateChildNodesForObject(obj);
+        }
+
+        private IEnumerable<XElement> CreateChildNodesForDictionary(IDictionary dictionary)
+        {
+            return from object key in dictionary.Keys select new XElement(key.ToString(), GetPropertyXValue(dictionary[key]));
+        }
+
+        private IEnumerable<XElement> CreateChildNodesForEnumerable(IEnumerable list)
+        {
+            return list.Cast<object>().Select(CreateXElement);
         }
 
         private IEnumerable<XElement> CreateChildNodesForObject(object obj)
