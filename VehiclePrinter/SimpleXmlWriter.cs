@@ -1,15 +1,14 @@
 ﻿using System.Collections;
-using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using System.Xml.Linq;
 
 namespace VehiclePrinter
 {
-    public class SimpleXmlWriter<T>
+    public class SimpleXmlWriter
     {
-        public T Item { get; }
+        public object Item { get; }
 
-        public SimpleXmlWriter([DisallowNull] T item)
+        public SimpleXmlWriter(object item)
         {
             Item = item ?? throw new ArgumentNullException(nameof(item));
         }
@@ -21,20 +20,29 @@ namespace VehiclePrinter
 
         public void Save(Stream fileStream)
         {
-            var doc = new XDocument( new XElement(typeof(T).Name, CreateChildNodes(Item)));
+            var doc = new XDocument(CreateXElement(Item));
             doc.Save(fileStream);
+        }
+
+        private XElement CreateXElement(object obj)
+        {
+            return new XElement(obj.GetType().Name, GetPropertyXValue(obj));
+        }
+
+        private object GetPropertyXValue(object value)
+        {
+            return value.GetType().IsSimple() ? value : CreateChildNodes(value);
         }
 
         private IEnumerable<XElement> CreateChildNodes(object obj)
         {
-            if (obj is IEnumerable list) return CreateNodesForEnumerable(list);
+            if (obj is IEnumerable list) return list.Cast<object>().Select(CreateXElement);
             return CreateChildNodesForObject(obj);
         }
 
         private IEnumerable<XElement> CreateChildNodesForObject(object obj)
         {
-;           var properties = obj.GetType().GetProperties();
-            foreach (var property in properties)
+            foreach (var property in obj.GetType().GetProperties())
             {
                 var value = property.GetValue(obj);
                 if (value is not null)
@@ -42,31 +50,9 @@ namespace VehiclePrinter
             }
         }
 
-        private IEnumerable<XElement> CreateNodesForEnumerable(IEnumerable list)
-        {
-            return from object? obj in list select new XElement(obj.GetType().Name, GetPropertyXValue(obj));
-        }
-
         private XElement CreateChildNode(object value, MemberInfo property)
         {
             return new XElement(property.Name, GetPropertyXValue(value));
-        }
-
-        private object GetPropertyXValue(object value)
-        {
-            return IsSimple(value.GetType()) ? value : CreateChildNodes(value);
-        }
-
-        private static bool IsSimple(Type type)
-        {
-            if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Nullable<>))
-            {
-                return IsSimple(type.GetGenericArguments()[0]);
-            }
-            return type.IsPrimitive
-                   || type.IsEnum
-                   || type == typeof(string)
-                   || type == typeof(decimal);
         }
     }
 }
