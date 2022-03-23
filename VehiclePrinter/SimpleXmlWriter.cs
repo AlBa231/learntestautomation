@@ -31,7 +31,8 @@ namespace VehiclePrinter
 
         private string GetXElementName(object obj)
         {
-            if (obj is IDictionary dictionary) return dictionary.Values.GetType().GetGenericArguments()[1].Name;
+            if (obj is IDictionary dictionary) return dictionary.Values.GetType().GetGenericArguments().Last().Name;
+            if (obj is IEnumerable list) return list.GetType().Name.Contains('`') ? list.GetType().GetGenericArguments().Last().Name + 's' : list.GetType().Name;
             return obj.GetType().Name;
         }
 

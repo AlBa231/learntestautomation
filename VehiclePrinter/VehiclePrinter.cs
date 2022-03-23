@@ -35,7 +35,12 @@ namespace VehiclePrinter
                             .ToDictionary(g => g.Key, g => new VehicleList(g));
             var vehicleByTransmissionXml = new SimpleXmlWriter(vehiclesByGroup);
             vehicleByTransmissionXml.Save("transmission.xml");
+        }
 
+        public void SaveBusAndTruckEngines(string fileName)
+        {
+            var engines = Vehicles.Where(v => v is Bus or Truck).Select(v => v.Engine);
+            new SimpleXmlWriter(engines).Save(fileName);
         }
 
         private static void PrintVehicleInfo(Vehicle vehicle, int index)
@@ -45,6 +50,5 @@ namespace VehiclePrinter
             Console.WriteLine(new string('=', 80));
             Console.WriteLine();
         }
-
     }
 }

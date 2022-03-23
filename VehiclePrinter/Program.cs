@@ -9,4 +9,5 @@ var printer = new VehiclePrinter.VehiclePrinter(vehicles);
 printer.ShowVehicleInfo();
 
 printer.SaveLargeEngineVehicles("large.xml");
+printer.SaveBusAndTruckEngines("engines.xml");
 printer.SaveVehiclesByTransmission("transmission.xml");
