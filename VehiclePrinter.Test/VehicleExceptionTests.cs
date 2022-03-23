@@ -18,5 +18,14 @@ namespace VehiclePrinter.Test
 
             Assert.Throws<VehicleInitializationException>(() => new Car { Chassis = chassis });
         }
+
+        [Fact]
+        public void TestAddException()
+        {
+            var vehicleList = new VehicleList();
+            var car = new Car();
+
+            Assert.Throws<VehicleAddException>(() => vehicleList.Add(car));
+        }
     }
 }
