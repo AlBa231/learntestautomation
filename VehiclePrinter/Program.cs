@@ -1,4 +1,5 @@
 ﻿
+using System.Runtime.CompilerServices;
 using VehiclePrinter;
 using VehiclePrinter.Models;
 
@@ -14,6 +15,11 @@ for (var i = 0; i < vehicles.Count; i++)
     Console.WriteLine();
 }
 
+var largeEngineVehicles = new VehicleList(vehicles.Where(vehicle => vehicle.Engine.Capacity > 1500));
+largeEngineVehicles.Save("large.xml");
 
+
+var vehicleByTransmission = new VehicleByTransmissionList(vehicles);
+vehicleByTransmission.Save("transmission.xml");
 
 string GetVehicleHeader(Vehicle vehicle, int index) => $"{index + 1}. {vehicle.GetType().Name}";

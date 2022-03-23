@@ -18,6 +18,12 @@ namespace VehiclePrinter
         {
         }
 
+        public void Save(string fileName)
+        {
+            using var fs = new FileStream(fileName, FileMode.Create);
+            Save(fs);
+        }
+
         public void Save(Stream fileStream)
         {
             var serializer = new XmlSerializer(typeof(VehicleList));
