@@ -43,6 +43,17 @@ namespace CarCalculator.Test
             Assert.Equal("Average price: 13028", result);
         }
 
+        [Fact]
+        public void TestCalcAveragePriceByTypeCommand()
+        {
+            var cars = InitCars();
+            var command = new CalcAverageCarsByTypeCommand("Ford");
+
+            var result = command.Execute(cars);
+
+            Assert.Equal("Average price: 23500", result);
+        }
+
         private static Car[] InitCars()
         {
             return new[]
