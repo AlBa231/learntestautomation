@@ -1,3 +1,4 @@
+using System;
 using CarCalculator.Lib;
 using Xunit;
 
@@ -53,7 +54,7 @@ namespace CarCalculator.Test
 
             Assert.Equal("Average price: 23500", result);
         }
-
+        
         private static Car[] InitCars()
         {
             return new[]
