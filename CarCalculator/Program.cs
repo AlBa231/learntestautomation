@@ -1,2 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using CarCalculator;
+
+var processor = new ConsoleCommandProcessor();
+processor.RequestCars();

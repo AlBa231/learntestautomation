@@ -11,7 +11,9 @@ public class CalcAverageCarsByTypeCommand : ICalculatorCommand
 
     public string Execute(IEnumerable<Car> cars)
     {
-        var filteredCars = cars.Where(car => make.Equals(car.Make, StringComparison.OrdinalIgnoreCase));
+        var filteredCars = cars.Where(car => make.Equals(car.Make, StringComparison.OrdinalIgnoreCase)).ToList();
+        if (!filteredCars.Any())
+            return $"Make {make} is not found.";
         var price = Math.Round(filteredCars.Average(car => car.VehiclePrice));
 
         return $"Average price: {price}";
